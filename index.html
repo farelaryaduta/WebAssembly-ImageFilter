@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Image Filter App</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>WebAssembly Image Filter</h1>
+            <p class="subtitle">Process images with WASM for optimal performance</p>
+        </header>
+
+        <div class="card">
+            <div class="upload-container">
+                <div class="file-input-wrapper">
+                    <input type="file" id="upload" accept="image/*" />
+                    <div class="upload-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        Upload Image
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <select id="filter">
+                    <option value="blur">Blur</option>
+                    <option value="js-blur">Blur (JS)</option>
+                    <option value="sharpen">Sharpen</option>
+                    <option value="invert">Invert</option>
+                    <option value="js-invert">Invert (JS)</option>
+                </select>
+                <button id="apply">Apply Filter</button>
+            </div>
+
+            <div class="canvas-container">
+                <canvas id="canvas"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="filter.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
